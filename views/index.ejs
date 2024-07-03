@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Posts</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>Quora Posts</h1>
@@ -14,6 +14,10 @@
             <h3 class="content"><%= post.content %></h3>
             <br/>
             <a href="http://localhost:8080/posts/<%=post.id%>">See in Detail</a>
+            <a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit</a>
+            <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+                <button>Delete Post</button>
+            </form>
         </div>
     <% } %>
     <br/>
